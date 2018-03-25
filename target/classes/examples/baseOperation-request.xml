@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<env:Header>
+		<SessionHeader xmlns="urn:partner.soap.sforce.com">
+			<sessionId>00Df4000001dNas!ARQAQEVv9t0L9D8TswbX06sTwfkTQzYqeYvVnVomG041EE7T5xRTF5rbCMJ_hS6XYvVk.sQTh03okRXfqerOBj8LYwpBTYN1</sessionId>
+		</SessionHeader>
+	</env:Header>
+	<env:Body>
+		<m:operation xmlns:m="urn:partner.soap.sforce.com" xmlns:sobj="urn:sobject.partner.soap.sforce.com">
+		</m:operation>
+	</env:Body>
+</env:Envelope>

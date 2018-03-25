@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sf="urn:fault.partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <soapenv:Fault>
+         <faultcode>UNKNOWN_EXCEPTION</faultcode>
+         <faultstring>UNKNOWN_EXCEPTION: Operation not available or permitted</faultstring>
+         <detail>
+            <sf:UnexpectedErrorFault xsi:type="sf:UnexpectedErrorFault">
+               <sf:exceptionCode>UNKNOWN_EXCEPTION</sf:exceptionCode>
+               <sf:exceptionMessage>Operation not available or permitted</sf:exceptionMessage>
+            </sf:UnexpectedErrorFault>
+         </detail>
+      </soapenv:Fault>
+   </soapenv:Body>
+</soapenv:Envelope>

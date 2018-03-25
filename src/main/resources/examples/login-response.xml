@@ -1,0 +1,38 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+<loginResponse xmlns="urn:partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<result>
+<metadataServerUrl>http://66ccac32.ngrok.io/services/Soap/m/41.0/012345/</metadataServerUrl>
+<passwordExpired>false</passwordExpired>
+<sandbox>false</sandbox>
+<serverUrl>http://66ccac32.ngrok.io/services/Soap/u/41.0/012345/</serverUrl>
+<sessionId>00Df4000001dNas!ARQAQFeFaTYv1Zof7ntUz_gNYz.3m7F2gBN0lM_CMXKfPQ_8O2fAwhvUCMjW8VrakYIjDYFXcs4lmeG8OEHUXCNDWsTCJLMQ</sessionId>
+<userId>0A</userId>
+<userInfo>
+    <accessibilityMode>false</accessibilityMode>
+    <chatterExternal>false</chatterExternal>
+    <currencySymbol>$</currencySymbol>
+    <orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit>
+    <orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode>
+    <orgDefaultCurrencyLocale>en_US</orgDefaultCurrencyLocale>
+    <orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments>
+    <orgHasPersonAccounts>false</orgHasPersonAccounts>
+    <organizationId>012345</organizationId>
+    <organizationMultiCurrency>false</organizationMultiCurrency>
+    <organizationName>MuleSoft</organizationName>
+    <profileId>00ef4000001N71KAAS</profileId>
+    <roleId xsi:nil="true"/>
+    <sessionSecondsValid>7200</sessionSecondsValid>
+    <userDefaultCurrencyIsoCode xsi:nil="true"/>
+    <userEmail>max@mulesoft.com</userEmail>
+    <userFullName>Max Mule</userFullName>
+    <userId>0A</userId>
+    <userLanguage>en_US</userLanguage>
+    <userLocale>en_US</userLocale>
+    <userName>max@mulesoft.com</userName>
+    <userTimeZone>America/Los_Angeles</userTimeZone>
+    <userType>Standard</userType>
+    <userUiSkin>Theme3</userUiSkin>
+</userInfo></result></loginResponse>
+</soap:Body>
+</soap:Envelope>

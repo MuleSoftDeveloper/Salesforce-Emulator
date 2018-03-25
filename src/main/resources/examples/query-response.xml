@@ -1,0 +1,42 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:partner.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sf="urn:sobject.partner.soap.sforce.com">
+   <soapenv:Header>
+      <LimitInfoHeader>
+         <limitInfo>
+            <current>1</current>
+            <limit>15000</limit>
+            <type>API REQUESTS</type>
+         </limitInfo>
+      </LimitInfoHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <queryResponse>
+         <result xsi:type="QueryResult">
+            <done>true</done>
+            <queryLocator xsi:nil="true"/>
+            <records xsi:type="sf:sObject">
+               <sf:type>Lead</sf:type>
+               <sf:Id>00Qf4000005TFkmEAG</sf:Id>
+               <sf:Id>00Qf4000005TFkmEAG</sf:Id>
+               <sf:FirstName>John</sf:FirstName>
+               <sf:LastName>Smith</sf:LastName>
+               <sf:Email>john@example.com</sf:Email>
+               <sf:Company>FakeCorp</sf:Company>
+               <sf:Phone>555-555-5555</sf:Phone>
+               <sf:Product_Purchased__c>53c8531b-ce4d-11e7-9c84-06bf056d193e</sf:Product_Purchased__c>
+            </records>
+            <records xsi:type="sf:sObject">
+                <sf:type>Lead</sf:type>
+                <sf:Id>01Qf4000005TFkmASD</sf:Id>
+                <sf:Id>01Qf4000005TFkmASD</sf:Id>
+                <sf:FirstName>Jane</sf:FirstName>
+                <sf:LastName>Roe</sf:LastName>
+                <sf:Email>jane@example.com</sf:Email>
+                <sf:Company>MegaCorp</sf:Company>
+                <sf:Phone>888-333-3333</sf:Phone>
+                <sf:Product_Purchased__c>1295527d-d3c7-11e7-9c84-06bf056d193e</sf:Product_Purchased__c>
+            </records>
+            <size>2</size>
+         </result>
+      </queryResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

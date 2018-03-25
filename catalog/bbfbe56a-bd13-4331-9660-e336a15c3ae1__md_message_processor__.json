@@ -1,0 +1,11 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "describeSObject-request"
+        }
+    },
+    "outputMessageMetadata": {},
+    "id": "bbfbe56a-bd13-4331-9660-e336a15c3ae1",
+    "version": "5.2.0.0"
+}

@@ -1,0 +1,26 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><getUserInfoResponse xmlns="urn:partner.soap.sforce.com">
+  <result>
+    <accessibilityMode>false</accessibilityMode>
+    <currencySymbol>$</currencySymbol>
+    <orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit>
+    <orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode>
+    <orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments>
+    <orgHasPersonAccounts>false</orgHasPersonAccounts>
+    <organizationId>00Df4000001dNasEAE</organizationId>
+    <organizationMultiCurrency>false</organizationMultiCurrency>
+    <organizationName>MuleSoft</organizationName>
+    <profileId>00ef4000001N71KAAS</profileId>
+    <roleId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <sessionSecondsValid>7200</sessionSecondsValid>
+    <userDefaultCurrencyIsoCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <userEmail>rashed.talukder@mulesoft.com</userEmail>
+    <userFullName>Rashed Talukder</userFullName>
+    <userId>005f4000000aGFvAAM</userId>
+    <userLanguage>en_US</userLanguage>
+    <userLocale>en_US</userLocale>
+    <userName>rashed.talukder@mulesoft.com</userName>
+    <userTimeZone>America/Los_Angeles</userTimeZone>
+    <userType>Standard</userType>
+    <userUiSkin>Theme3</userUiSkin>
+  </result>
+</getUserInfoResponse></soap:Body></soap:Envelope>

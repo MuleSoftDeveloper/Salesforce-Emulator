@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<env:Header>
+<SessionHeader xmlns="urn:partner.soap.sforce.com">
+<sessionId>00Df4000001dNas!ARQAQKInLud2bTQGYQuRoJ7JSqKhGwsjQ6t260qKoUSPAeR10HO6dgB1afUen4AHLHpGaolJkxEbaf6XcOxGv6I_G5PsV45d</sessionId>
+</SessionHeader>
+</env:Header>
+<env:Body>
+<m:query xmlns:m="urn:partner.soap.sforce.com" xmlns:sobj="urn:sobject.partner.soap.sforce.com">
+<m:queryString>SELECT Company,FirstName,Id,LastName,Phone,Product_Purchased__c FROM Lead</m:queryString>
+</m:query>
+</env:Body>
+</env:Envelope>

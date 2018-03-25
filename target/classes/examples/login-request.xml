@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:partner.soap.sforce.com">
+   <soapenv:Header>
+      <urn:CallOptions>
+         <urn:client>?</urn:client>
+         <urn:defaultNamespace>asdf</urn:defaultNamespace>
+      </urn:CallOptions>
+      <urn:LoginScopeHeader>
+         <urn:organizationId>asdf</urn:organizationId>
+         <!--Optional:-->
+         <urn:portalId>asdf</urn:portalId>
+      </urn:LoginScopeHeader>
+   </soapenv:Header>
+  <soapenv:Body>
+    <urn:login xmlns:urn="urn:partner.soap.sforce.com">
+      <urn:username>mulesoft</urn:username>
+      <urn:password>mulesoft</urn:password>
+    </urn:login>
+  </soapenv:Body>
+</soapenv:Envelope>
