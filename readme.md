@@ -11,4 +11,4 @@ Mule runtime 3.9.1
 
 
 ## Deployed service
-(http://salesforce-emulator.cloudhub.io/)[http://salesforce-emulator.cloudhub.io/]
+[http://salesforce-emulator.cloudhub.io/](http://salesforce-emulator.cloudhub.io/)
