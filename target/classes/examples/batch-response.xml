@@ -1,0 +1,13 @@
+<batchInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>BATCH01A</id>
+ <jobId>JOB0A1</jobId>
+ <state>Queued</state>
+ <createdDate>2018-03-26T08:50:01.000Z</createdDate>
+ <systemModstamp>2018-03-26T08:50:01.000Z</systemModstamp>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</batchInfo>

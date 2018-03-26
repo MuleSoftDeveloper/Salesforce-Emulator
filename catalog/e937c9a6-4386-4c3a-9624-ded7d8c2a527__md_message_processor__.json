@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "newJob_request"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "newJob_response"
+        }
+    },
+    "id": "e937c9a6-4386-4c3a-9624-ded7d8c2a527",
+    "version": "5.2.0.0"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><jobInfo
+   xmlns="http://www.force.com/2009/06/asyncapi/dataload">
+ <id>JOB0A1</id>
+ <operation>upsert</operation>
+ <object>Contact</object>
+ <createdById>0A1</createdById>
+ <createdDate>2018-03-26T08:50:01.000Z</createdDate>
+ <systemModstamp>2018-03-26T08:50:01.000Z</systemModstamp>
+ <state>Open</state>
+ <externalIdFieldName>id</externalIdFieldName>
+ <concurrencyMode>Parallel</concurrencyMode>
+ <contentType>XML</contentType>
+ <numberBatchesQueued>0</numberBatchesQueued>
+ <numberBatchesInProgress>0</numberBatchesInProgress>
+ <numberBatchesCompleted>0</numberBatchesCompleted>
+ <numberBatchesFailed>0</numberBatchesFailed>
+ <numberBatchesTotal>0</numberBatchesTotal>
+ <numberRecordsProcessed>0</numberRecordsProcessed>
+ <numberRetries>0</numberRetries>
+ <apiVersion>41.0</apiVersion>
+ <numberRecordsFailed>0</numberRecordsFailed>
+ <totalProcessingTime>0</totalProcessingTime>
+ <apiActiveProcessingTime>0</apiActiveProcessingTime>
+ <apexProcessingTime>0</apexProcessingTime>
+</jobInfo>

@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:wmq="http://www.mulesoft.org/schema/mule/ee/wmq" xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:spring="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
-http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
 http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
-http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
-http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
-http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
-http://www.mulesoft.org/schema/mule/ee/wmq http://www.mulesoft.org/schema/mule/ee/wmq/current/mule-wmq-ee.xsd
-http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
-    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" basePath="/services/Soap" doc:name="HTTP Listener Configuration"/>
-    <flow name="salesforcemock2Flow1">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="u/41.0/" doc:name="HTTP"/>
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" basePath="/services" doc:name="HTTP Listener Configuration"/>
+    <flow name="salesforce-emulatorLogin">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/Soap/u/41.0/" doc:name="HTTP" allowedMethods="POST"/>
         <dw:transform-message doc:name="Transform Message" metadata:id="32a094bc-b97b-4c80-8e9e-93f789afb946">
             <dw:input-payload mimeType="application/xml" doc:sample="examples/login-request.xml"/>
             <dw:set-payload><![CDATA[%dw 1.0
@@ -44,8 +38,8 @@ readUrl("classpath://examples/login-fault.xml","application/xml")]]></dw:set-pay
             </otherwise>
         </choice>
     </flow>
-    <flow name="salesforcemock2Flow">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="/u/41.0/012345" doc:name="HTTP"/>
+    <flow name="salesforce-emulatorOperation">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/Soap/u/41.0/012345" doc:name="HTTP"/>
         <dw:transform-message doc:name="Transform Message" metadata:id="2db237bd-ee21-4851-8d47-2065e202a09b">
             <dw:input-payload mimeType="application/xml"/>
             <dw:set-payload><![CDATA[%dw 1.0
@@ -2668,8 +2662,61 @@ readUrl("classpath://examples/login-fault.xml","application/xml")]]></dw:set-pay
             </otherwise>
         </choice>
     </flow>
-    <flow name="salesforcemock2Flow2">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="/m/41.0/012345" doc:name="HTTP"/>
+    <flow name="salesforce-emulatorBulk">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/async/41.0/job/*" allowedMethods="POST" doc:name="HTTP"/>
+        <logger message="#[message.inboundProperties.'http.request.uri']" level="INFO" doc:name="Logger"/>
+        <choice doc:name="Choice">
+            <when expression="#[message.inboundProperties.'http.request.uri' == '/services/async/41.0/job/']">
+                <set-payload value="&lt;jobInfo
+   xmlns=&quot;http://www.force.com/2009/06/asyncapi/dataload&quot;&gt;
+ &lt;id&gt;JOB0A1&lt;/id&gt;
+ &lt;operation&gt;upsert&lt;/operation&gt;
+ &lt;object&gt;Contact&lt;/object&gt;
+ &lt;createdById&gt;0A1&lt;/createdById&gt;
+ &lt;createdDate&gt;2018-03-26T08:50:01.000Z&lt;/createdDate&gt;
+ &lt;systemModstamp&gt;2018-03-26T08:50:01.000Z&lt;/systemModstamp&gt;
+ &lt;state&gt;Open&lt;/state&gt;
+ &lt;externalIdFieldName&gt;id&lt;/externalIdFieldName&gt;
+ &lt;concurrencyMode&gt;Parallel&lt;/concurrencyMode&gt;
+ &lt;contentType&gt;XML&lt;/contentType&gt;
+ &lt;numberBatchesQueued&gt;0&lt;/numberBatchesQueued&gt;
+ &lt;numberBatchesInProgress&gt;0&lt;/numberBatchesInProgress&gt;
+ &lt;numberBatchesCompleted&gt;0&lt;/numberBatchesCompleted&gt;
+ &lt;numberBatchesFailed&gt;0&lt;/numberBatchesFailed&gt;
+ &lt;numberBatchesTotal&gt;0&lt;/numberBatchesTotal&gt;
+ &lt;numberRecordsProcessed&gt;0&lt;/numberRecordsProcessed&gt;
+ &lt;numberRetries&gt;0&lt;/numberRetries&gt;
+ &lt;apiVersion&gt;41.0&lt;/apiVersion&gt;
+ &lt;numberRecordsFailed&gt;0&lt;/numberRecordsFailed&gt;
+ &lt;totalProcessingTime&gt;0&lt;/totalProcessingTime&gt;
+ &lt;apiActiveProcessingTime&gt;0&lt;/apiActiveProcessingTime&gt;
+ &lt;apexProcessingTime&gt;0&lt;/apexProcessingTime&gt;
+&lt;/jobInfo&gt;" mimeType="application/xml" doc:name="Set Payload"/>
+            </when>
+            <when expression="#[message.inboundProperties.'http.request.uri' == '/services/async/41.0/job/JOB0A1/batch']">
+                <set-payload value="&lt;batchInfo
+   xmlns=&quot;http://www.force.com/2009/06/asyncapi/dataload&quot;&gt;
+ &lt;id&gt;BATCH01A&lt;/id&gt;
+ &lt;jobId&gt;JOB0A1&lt;/jobId&gt;
+ &lt;state&gt;Queued&lt;/state&gt;
+ &lt;createdDate&gt;2018-03-26T08:50:01.000Z&lt;/createdDate&gt;
+ &lt;systemModstamp&gt;2018-03-26T08:50:01.000Z&lt;/systemModstamp&gt;
+ &lt;numberRecordsProcessed&gt;0&lt;/numberRecordsProcessed&gt;
+ &lt;numberRecordsFailed&gt;0&lt;/numberRecordsFailed&gt;
+ &lt;totalProcessingTime&gt;0&lt;/totalProcessingTime&gt;
+ &lt;apiActiveProcessingTime&gt;0&lt;/apiActiveProcessingTime&gt;
+ &lt;apexProcessingTime&gt;0&lt;/apexProcessingTime&gt;
+&lt;/batchInfo&gt;" mimeType="application/xml" doc:name="Set Payload"/>
+            </when>
+            <otherwise>
+                <set-payload value="&lt;error&gt;
+	&lt;message&gt;You must match the example in the guide exactly&lt;/message&gt;
+&lt;/error&gt;" mimeType="application/xml" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+    <flow name="salesforce-emulatorMetadata">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/Soap/m/41.0/012345" doc:name="HTTP"/>
         <logger message="Metadata Request: #[payload]" level="INFO" doc:name="Logger"/>
     </flow>
 </mule>

@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "batch-request"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "batch-response"
+        }
+    },
+    "id": "4a3f7749-d004-467e-8f1a-53cf0f002a3d",
+    "version": "5.2.0.0"
+}

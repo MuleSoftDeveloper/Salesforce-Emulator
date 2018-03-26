@@ -1,0 +1,34 @@
+<sObjects xmlns="http://www.force.com/2009/06/asyncapi/dataload" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sObject>
+		<Email>rod@example.com</Email>
+		<FirstName>Rod</FirstName>
+		<MailingCountry>USA</MailingCountry>
+		<Title></Title>
+		<MailingCity>San Francisco</MailingCity>
+		<Salutation>Mr.</Salutation>
+		<MailingState>CA</MailingState>
+		<MobilePhone></MobilePhone>
+		<Name>Rod Barker</Name>
+		<Phone>(555) 555-5555</Phone>
+		<MailingPostalCode>94108</MailingPostalCode>
+		<LastName>Barker</LastName>
+		<Fax></Fax>
+		<MailingStreet>555 Geary Lane</MailingStreet>
+	</sObject>
+	<sObject>
+		<Email>Vob@example.com</Email>
+		<FirstName>Vob</FirstName>
+		<MailingCountry>USA</MailingCountry>
+		<Title></Title>
+		<MailingCity>San Francisco</MailingCity>
+		<Salutation>Mr.</Salutation>
+		<MailingState>CA</MailingState>
+		<MobilePhone></MobilePhone>
+		<Name>VobBarker</Name>
+		<Phone>(555) 555-5555</Phone>
+		<MailingPostalCode>94108</MailingPostalCode>
+		<LastName>Barker</LastName>
+		<Fax></Fax>
+		<MailingStreet>555 Geary Lane</MailingStreet>
+	</sObject>
+</sObjects>
