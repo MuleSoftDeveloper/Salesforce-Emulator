@@ -31,14 +31,6 @@
 		<!-- Mule classes --> 
 		<AsyncLogger name="org.mule" level="INFO"/> 
 		<AsyncLogger name="com.mulesoft" level="INFO"/>
-		
-		<!-- SFDC --> 
-		<AsyncLogger name="org.mule.modules.salesforce" level="TRACE"/> 
-		<AsyncLogger name="com.sforce" level="TRACE"/> 
-		<!--HTTP--> 
-		<Logger level="DEBUG" name="httpclient.wire.header"/> 
-		<Logger level="DEBUG" name="httpclient.wire.content"/> 
-		<Logger level="DEBUG" name="org.apache.http"/>
         
         <AsyncRoot level="INFO">
             <AppenderRef ref="file" />

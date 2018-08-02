@@ -12258,7 +12258,7 @@ readUrl("classpath://examples/login-fault.xml","application/xml")]]></dw:set-pay
          &lt;/result&gt;
       &lt;/describeGlobalResponse&gt;
    &lt;/soapenv:Body&gt;
-&lt;/soapenv:Envelope&gt;" doc:name="Set Payload"/>
+&lt;/soapenv:Envelope&gt;" doc:name="Describe Global Response"/>
             </when>
             <when expression="#[payload.body.?describeSObject.?sObjectType == &quot;Contact&quot;]">
                 <logger message="describeSObject Contact" level="INFO" doc:name="describeSObject Contact"/>
@@ -14949,7 +14949,7 @@ readUrl("classpath://examples/login-fault.xml","application/xml")]]></dw:set-pay
          &lt;/result&gt;
       &lt;/describeSObjectResponse&gt;
    &lt;/soapenv:Body&gt;
-&lt;/soapenv:Envelope&gt;" doc:name="Set Payload"/>
+&lt;/soapenv:Envelope&gt;" doc:name="Describe Contact SOBject"/>
             </when>
             <otherwise>
                 <set-payload value="&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:sf=&quot;urn:fault.partner.soap.sforce.com&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
@@ -14998,7 +14998,7 @@ readUrl("classpath://examples/login-fault.xml","application/xml")]]></dw:set-pay
  &lt;totalProcessingTime&gt;0&lt;/totalProcessingTime&gt;
  &lt;apiActiveProcessingTime&gt;0&lt;/apiActiveProcessingTime&gt;
  &lt;apexProcessingTime&gt;0&lt;/apexProcessingTime&gt;
-&lt;/jobInfo&gt;" mimeType="application/xml" doc:name="Set Payload"/>
+&lt;/jobInfo&gt;" mimeType="application/xml" doc:name="Assign Job ID for Upsert Operation"/>
             </when>
             <when expression="#[message.inboundProperties.'http.request.uri' == '/services/async/41.0/job/JOB0A1/batch']">
                 <set-payload value="&lt;batchInfo
@@ -15013,12 +15013,12 @@ readUrl("classpath://examples/login-fault.xml","application/xml")]]></dw:set-pay
  &lt;totalProcessingTime&gt;0&lt;/totalProcessingTime&gt;
  &lt;apiActiveProcessingTime&gt;0&lt;/apiActiveProcessingTime&gt;
  &lt;apexProcessingTime&gt;0&lt;/apexProcessingTime&gt;
-&lt;/batchInfo&gt;" mimeType="application/xml" doc:name="Set Payload"/>
+&lt;/batchInfo&gt;" mimeType="application/xml" doc:name="Upsert Success for Batch Job"/>
             </when>
             <otherwise>
                 <set-payload value="&lt;error&gt;
 	&lt;message&gt;You must match the example in the guide exactly&lt;/message&gt;
-&lt;/error&gt;" mimeType="application/xml" doc:name="Set Payload"/>
+&lt;/error&gt;" mimeType="application/xml" doc:name="Error Message"/>
             </otherwise>
         </choice>
     </flow>
