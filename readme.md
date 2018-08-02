@@ -4,8 +4,8 @@ This project emulates request and response flows of some of the Salesforce partn
 **NOTE:** Currently all responses are emulated with predefined payloads. Future iterations can potentially use a real Salesforce instance, but currently that's not possible. At the time of writing this service, SOAPKit overrides the response and the consumer Salesforce connector does not handle the modified responses. You also cannot use the Salesforce WSDL to generate the SOAP service since the payload deviates from pure SOAP standard and SOAPkit will attach namespaces to all tags.
 
 ## Requirements
-Anypoint Studio 6.4
-Mule runtime 3.9.1
+ - Anypoint Studio 6.4
+ - Mule runtime 3.9.1
 
 
 ## Deployed service
