@@ -35,7 +35,7 @@ To see detailed logs of all transactions, modify your log4j output to include th
 
 ## Available SOAP Operations
  - Login
- - DescribeSOBject (only 'Lead' and 'Contact'  object type supported)
+ - DescribeSOBject (only `Lead` and `Contact`  object type supported)
  - GetUserInfo
  - Query (Only supports a SoQL query of `SELECT Id,FirstName,LastName,Company,Email,Phone,Product_Purchased__c FROM Lead`)
  - DescribeGlobal
