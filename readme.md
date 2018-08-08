@@ -14,8 +14,8 @@ Use the MuleSoft Salesforce connector with the details below to POST SOAP reques
 [http://salesforce-emulator.cloudhub.io/](http://salesforce-emulator.cloudhub.io/)
 
 ## User credentials
-Username: `mulesoft`
-Password: `mulesoft`
+Username: `mulesoft`\
+Password: `mulesoft`\
 Security Token: ``
 
 ## Troubleshooting
