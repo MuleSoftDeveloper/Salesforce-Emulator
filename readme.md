@@ -16,7 +16,7 @@ Use the MuleSoft Salesforce connector with the details below to POST SOAP reques
 ## User credentials
 Username: `mulesoft`\
 Password: `mulesoft`\
-Security Token: ``
+Security Token: ` `
 
 ## Troubleshooting
 To see detailed logs of all transactions, modify your log4j output to include the following:
